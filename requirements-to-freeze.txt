@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+SQLAlchemy
+requests
+Werkzeug
+Flask-Mail
+Flask_Uploads
+uwsgi
+numpy
