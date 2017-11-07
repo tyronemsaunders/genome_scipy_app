@@ -7,3 +7,12 @@ Flask-Mail
 Flask_Uploads
 uwsgi
 numpy
+scipy
+matplotlib
+ipython
+jupyter
+pandas
+sympy
+nose
+scikit-image
+scikit-learn
