@@ -4,14 +4,17 @@ from flask import Flask
 
 from . import config as Config
 from .api import health
+from .frontend import frontend
 from .extensions import db, mail
 from .response import Response
+from .constants import FLASK_PROJECT_ROOT
 
 # only import the create_app() function when from app import * is called
 __all__ = ['create_app']
 
 DEFAULT_BLUEPRINTS = [
-    health
+    health,
+    frontend
 ]
 
 def create_app(config=None, app_name=None, blueprints=None):
@@ -27,7 +30,7 @@ def create_app(config=None, app_name=None, blueprints=None):
         # load blueprints from the list of blueprints defined in this module
         blueprints = DEFAULT_BLUEPRINTS
     
-    app = Flask(app_name)
+    app = Flask(app_name, static_folder=os.path.join(FLASK_PROJECT_ROOT, 'static'), template_folder=os.path.join(FLASK_PROJECT_ROOT, 'templates'))
     
     # configure the app
     configure_app(app, config)

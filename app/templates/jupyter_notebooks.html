@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>App</title>
+</head>
+	<body>
+		<h1>Jupyter Notebooks in HTML</h1>
+	    <ul id="navigation">
+	    {% for notebook in notebooks %}
+	        <li><a href="/notebooks/{{ notebook }}">{{ notebook }}</a></li>
+	    {% endfor %}
+	    </ul>
+	</body>
+</html>
